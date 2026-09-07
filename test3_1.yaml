@@ -1,0 +1,12 @@
+limit: 1000
+memory_size: 0x1000
+
+memory_mapped_io:
+  0x80: [72, 101, 108, 108, 111, 10]
+  0x84: []
+
+reports:
+  - name: My test
+    slice: last
+    view: |
+      output: {io:0x84:sym}

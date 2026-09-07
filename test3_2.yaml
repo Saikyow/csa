@@ -1,0 +1,33 @@
+name: sum-simple
+
+limit: 1000
+
+memory_size: 0x1000
+
+
+
+memory_mapped_io:
+
+  0x80: [2, 48, 18]
+
+  0x84: []
+
+
+
+reports:
+
+  - name: Result
+
+    slice: last
+
+    view: |
+
+      input:  {io:0x80:dec}
+
+      output: {io:0x84:dec}
+
+    assert: |
+
+      input:  [] >>> []
+
+      output: [] >>> [0,66]

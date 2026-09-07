@@ -1,0 +1,33 @@
+name: bracket-valid-1
+
+limit: 5000
+
+memory_size: 0x1000
+
+
+
+memory_mapped_io:
+
+  0x80: [40, 91, 93, 123, 125, 41, 10]
+
+  0x84: []
+
+
+
+reports:
+
+  - name: Result
+
+    slice: last
+
+    view: |
+
+      input:  {io:0x80:sym}
+
+      output: {io:0x84:dec}
+
+    assert: |
+
+      input:  "" >>> ""
+
+      output: [] >>> [1]
